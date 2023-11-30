@@ -1,0 +1,48 @@
+@startuml
+
+PROJECT_USER --> PROJECT
+PROJECT_USER --> USER
+TICKET --> USER
+TICKET --> PROJECT
+EVENT --> TICKET
+
+class USER {
+    PK id
+    name
+    email
+    profile_pict
+}
+
+class PROJECT {
+    PK id
+    name
+}
+
+class PROJECT_USER {
+    PK id
+    FK user_id
+    FK project_id
+}
+
+
+class TICKET{
+    PK id
+    name
+    description
+    status
+    FK user_id
+    FK project_id
+}
+
+class EVENT {
+    PK id
+    name
+    date
+    causante:ticket_id
+    description?
+    time
+    FK ticket_id
+}
+
+
+@enduml
