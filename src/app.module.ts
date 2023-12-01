@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { AuthzModule } from './authz/authz.module';
+import {LinearModule} from "./linear/linear.module";
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { AuthzModule } from './authz/authz.module';
       isGlobal: true,
     }),
     AuthzModule,
+    LinearModule,
   ],
   controllers: [AppController],
   providers: [AppService],
